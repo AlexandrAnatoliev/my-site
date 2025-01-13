@@ -2,7 +2,12 @@ package ru.project_euler.my_site;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+/**
+ * My site
+ *
+ * @author AlexandrAnatoliev
+ * @version 0.1.0 2025-01-06
+ */
 @SpringBootApplication
 public class MySiteApplication {
 
