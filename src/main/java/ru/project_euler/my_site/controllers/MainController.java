@@ -12,10 +12,5 @@ public class MainController {
         model.addAttribute("title", "Главная страница");
         return "home";
     }
-    @GetMapping("/leetcode")
-    public String leetcode(Model model) {
-        model.addAttribute("title", "Главная страница");
-        return "home";
-    }
 
 }
