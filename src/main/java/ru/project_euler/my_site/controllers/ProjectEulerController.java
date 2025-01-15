@@ -5,12 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MainController {
-
-    @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("title", "Main");
-        return "home";
+public class ProjectEulerController {
+    @GetMapping("/project-euler-roadmap")
+    public String projectEuler(Model model) {
+        return "projectEuler";
     }
 
 }
