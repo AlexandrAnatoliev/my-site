@@ -13,10 +13,17 @@ public class BlogController {
     private PostRepository postRepository;
 
     @GetMapping("/blog")
-    public String projectEuler(Model model) {
+    public String blogMain(Model model) {
         Iterable<Post> posts = postRepository.findAll();
         model.addAttribute("posts", posts);
-        return "blog";
+        return "blog-main";
+    }
+
+    @GetMapping("/blog/add")
+    public String blogAdd(Model model) {
+        Iterable<Post> posts = postRepository.findAll();
+        model.addAttribute("posts", posts);
+        return "blog-add";
     }
 
 }
