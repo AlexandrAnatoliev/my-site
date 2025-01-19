@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * My site
  *
  * @author AlexandrAnatoliev
- * @version 0.2.3 2025-01-06
+ * @version 0.3.0 2025-01-06
  */
 @SpringBootApplication
 public class MySiteApplication {
