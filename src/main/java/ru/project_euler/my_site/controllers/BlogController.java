@@ -8,15 +8,15 @@ import ru.project_euler.my_site.models.Post;
 import ru.project_euler.my_site.repo.PostRepository;
 
 @Controller
-public class ProjectEulerController {
+public class BlogController {
     @Autowired
     private PostRepository postRepository;
 
-    @GetMapping("/project-euler-roadmap")
+    @GetMapping("/blog")
     public String projectEuler(Model model) {
         Iterable<Post> posts = postRepository.findAll();
         model.addAttribute("posts", posts);
-        return "projectEuler";
+        return "blog";
     }
 
 }
