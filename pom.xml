@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.project-euler</groupId>
-    <artifactId>my-site</artifactId>
+    <artifactId>my-website</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>my-site</name>
     <description>Demo project for Spring Boot</description>
