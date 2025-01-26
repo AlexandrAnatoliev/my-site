@@ -30,14 +30,40 @@ public class BlogController {
         return "blog-add";
     }
 
+    /*
     @PostMapping("/blog/add")
     public String blogPostAdd(@RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
         Post post = new Post(title, anons, full_text);
         postRepository.save(post);
         return "redirect:/blog";
     }
+     */
 
-    @GetMapping("/blog/{id}")
+    /**
+     * Takes article parameters and stores its in intermediate model
+     *
+     * @param seo_title seo_title title for search engine optimisation "blog/.../seo_title/.."
+     * @param title     article title
+     * @param anons     article preview
+     * @param full_text article full text
+     * @param model     data structure for transferring an article to and from the database
+     * @return blog page
+     */
+    @PostMapping("/blog/add")
+    public String blogPostAdd(@RequestParam String seo_title, @RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
+        Post post = new Post(seo_title, title, anons, full_text);
+        postRepository.save(post);
+        return "redirect:/blog";
+    }
+
+    /**
+     * Retrieves an article from database by id
+     *
+     * @param id    unique article number in the database
+     * @param model data structure for transferring an article to and from the database
+     * @return HTML page with article
+     */
+    @GetMapping("/blog/{seo_title}/{id}")
     public String blogDetails(@PathVariable(value = "id") long id, Model model) {
         if (!postRepository.existsById(id)) {
             return "redirect:/blog";
