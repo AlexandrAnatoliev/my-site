@@ -37,6 +37,13 @@ public class BlogController {
         return "redirect:/blog";
     }
 
+    /**
+     * Retrieves an article from database by id
+     *
+     * @param id    unique article number in the database
+     * @param model data structure for transferring an article to and from the database
+     * @return HTML page with article
+     */
     @GetMapping("/blog/{id}")
     public String blogDetails(@PathVariable(value = "id") long id, Model model) {
         if (!postRepository.existsById(id)) {
